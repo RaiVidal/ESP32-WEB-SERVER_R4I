@@ -1,0 +1,17 @@
+__pycache__/
+.venv/
+esp-idf
+data
+checkpoints
+deployment_output
+my_dataset
+uv.lock
+
+esp32s3_nn.egg-info
+
+esp32_firmware/build
+esp32_firmware/dist
+esp32_firmware/components
+esp32_firmware/managed_components
+esp32_firmware/spiffs
+esp32_firmware/dependencies.lock

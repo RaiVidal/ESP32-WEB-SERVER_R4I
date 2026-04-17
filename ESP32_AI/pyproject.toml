@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "esp32s3-nn"
+version = "0.1.0"
+description = "ESP32-S3 neural network training and deployment pipeline"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.1.0",
+    "torchvision>=0.16.0",
+    "onnx>=1.15.0",
+    "onnxruntime>=1.17.0",
+    "esp-ppq>=1.2.0",
+    "numpy>=1.24.0",
+    "onnxscript>=0.6.2",
+]
+
+[dependency-groups]
+dev = []
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pytorch_layers*", "deployment*"]

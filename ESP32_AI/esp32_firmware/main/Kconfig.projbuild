@@ -1,0 +1,55 @@
+menu "ESP32 Neural Network Config"
+
+    choice
+        prompt "Board target profile"
+        default BOARD_TARGET_ESP32S3_MINI
+        help
+            Select the intended board profile for this firmware build.
+            This controls runtime behavior (e.g., sysinfo-only mode for ESP32-C3)
+            and should match the board you configured with setup_board.py.
+
+    config BOARD_TARGET_ESP32S3_MINI
+        bool "esp32s3_mini"
+
+    config BOARD_TARGET_ESP32_WROOM32
+        bool "esp32_wroom32"
+
+    config BOARD_TARGET_ESP32C3_MINI
+        bool "esp32c3_mini"
+
+    endchoice
+
+    config BOARD_TARGET
+        string
+        default "esp32s3_mini" if BOARD_TARGET_ESP32S3_MINI
+        default "esp32_wroom32" if BOARD_TARGET_ESP32_WROOM32
+        default "esp32c3_mini" if BOARD_TARGET_ESP32C3_MINI
+        help
+            Selected board profile as a string (used for runtime branching).
+
+    config MODEL_PATH
+        string "Model file path in SPIFFS"
+        default "/spiffs/tiny_cnn.espdl"
+        help
+            Path to the .espdl model file inside the SPIFFS partition.
+            Use the filename you specified in deploy.py --output-dir.
+
+    config INTERNAL_RAM_MB
+        int "Internal SRAM budget for model ops (MB)"
+        range 1 4
+        default 1
+        help
+            Amount of internal SRAM (faster) to allocate for layer buffers.
+            On the Super Mini (no PSRAM), set this to 1 and keep models small.
+            On boards with 8 MB PSRAM, you can raise this to 2-4 and the
+            memory planner will spill the rest to PSRAM automatically.
+
+    config N_RUNS
+        int "Number of benchmark inference runs"
+        range 10 500
+        default 50
+        help
+            How many inference passes to time for the benchmark.
+            Higher = more accurate average but longer startup time.
+
+endmenu
