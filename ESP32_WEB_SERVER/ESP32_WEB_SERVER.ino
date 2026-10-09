@@ -12,12 +12,6 @@
     - LED2: GPIO27
     - LM35: GPIO33
 
-  Created 27/08/2021
-  By Dott. Daniel Rossi
-  Copyright: ESP32 WEB SERVER © 2021 - GPLv3
-
-  YOUTUBE: Https://youtube.com/c/ProjectoOfficial
-  COLLABORATION E-MAIL: miniprojectsofficial@gmail.com
 */
 
 #include <WiFi.h>
