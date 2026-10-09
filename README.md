@@ -1,6 +1,6 @@
 # ESP32 Projects Repository
 
-Welcome to the ESP32 Projects repository, your source for a variety of projects developed for ESP32 microcontrollers. Explore the world of ESP32 and its applications in IoT, home automation, and more.
+Welcome to the ESP32 Projects repository, your source for a variety of projects developed for ESP32 microcontrollers. Explore the world of ESP32 and its applications in IoT, home automation, and more. (Bem-vindo ao repositório de projetos ESP32, sua fonte de diversos projetos desenvolvidos para microcontroladores ESP32. Explore o mundo do ESP32 e suas aplicações em IoT, automação e muito mais.)
 
 ## Table of Contents
 - [Project Descriptions](#project-descriptions)
